@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chúc mừng sinh nhật anh Nhất</title>
+    <link rel="icon" href="cake.png" type="image/png"> <!-- Thêm logo tiêu đề -->
+
+    <style>
+        /* Thiết lập ảnh nền */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            background-image: url('background.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Tăng kích thước ảnh lên 300px -->
+    <img id="countdown-image" src="5.png" alt="Countdown" width="300">
+
+    <script>
+        let countdown = 5;
+        const countdownImage = document.getElementById("countdown-image");
+
+        // Đặt thời gian đếm ngược là 0.8 giây mỗi lần
+        const interval = setInterval(() => {
+            countdownImage.src = countdown + ".png";
+            countdown--;
+
+            if (countdown < 0) {
+                clearInterval(interval);
+                window.location.href = "mybirthday.html";
+            }
+        }, 800);
+    </script>
+</body>
+
+</html>
